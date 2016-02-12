@@ -13,15 +13,15 @@
 
 public class Solution {
     public int maxDepth(TreeNode root) {
-        int left = 0;
-        int right = 0;
+        int left=0;
+        int right=0;
         
         if(root == null) {return 0;}
     else{
       left = maxDepth(root.left)+1;
       right = maxDepth(root.right)+1;
     }
-    return left > right? left:right;
+    return left>right?left:right;
   }
 }
 
