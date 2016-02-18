@@ -6,13 +6,13 @@
   //Solution1: Since the majority always take more than a half space, the middle element is guaranteed to be the majority. 
   //Sorting array takes nlog(n). So the time complexity of this solution is nlog(n). 
   
-  public int majorityElement(int[] num) {
-	   if (num.length == 1) {
-	    	return num[0];
+  public int majorityElement(int[] nums) {
+	   if (nums.length == 1) {
+	    	return nums[0];
     	}
  
-   	Arrays.sort(num);
-	  return num[num.length / 2];
+   	Arrays.sort(nums);
+	  return nums[nums.length / 2];
 	  }
 	 }
  
