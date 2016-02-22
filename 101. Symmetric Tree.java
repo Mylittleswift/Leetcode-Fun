@@ -25,6 +25,9 @@ But the following is not:
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
+ 
+ //Recursive solution
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
@@ -51,6 +54,52 @@ public class Solution {
         if (!isSymmetric(l.right, r.left)) {
             return false;
         }
+        return true;
+    }
+}
+
+
+
+//Iterative solution
+public class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+         
+        Queue<TreeNode> lQueue = new LinkedList<TreeNode>();
+        Queue<TreeNode> rQueue = new LinkedList<TreeNode>();
+         
+        lQueue.offer(root.left);
+        rQueue.offer(root.right);
+         
+        while (!lQueue.isEmpty()) {
+            TreeNode a = lQueue.poll();
+            TreeNode b = rQueue.poll();
+             
+            if (a == null && b != null) {
+                return false;
+            }
+             
+            if (b == null && a != null) {
+                return false;
+            }
+             
+            if (a != null && b != null && a.val != b.val) {
+                return false;
+            }
+             
+            if (a != null) {
+                lQueue.offer(a.left);
+                lQueue.offer(a.right);
+            }
+             
+            if (b != null) {
+                rQueue.offer(b.right);
+                rQueue.offer(b.left);
+            }
+        }
+         
         return true;
     }
 }
