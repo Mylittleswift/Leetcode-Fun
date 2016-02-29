@@ -1,2 +1,0 @@
-# MyLeetcodeSolutions
-# Code in Java
