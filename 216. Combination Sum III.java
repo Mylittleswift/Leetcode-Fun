@@ -23,26 +23,25 @@ Output:
 */
 
 public class Solution {
-    public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> list = new ArrayList<Integer>();
-        dfs(result, 1, n, list, k);
-        return result;
-    }
- 
-    public void dfs(List<List<Integer>> result, int start, int sum, List<Integer> list, int k) {
-        if (sum == 0 && list.size() == k) {
-            List<Integer> temp = new ArrayList<Integer>();
-            temp.addAll(list);
-            result.add(temp);
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (candidates == null || candidates.length == 0) {
+            return result;
         }
-        
-        for (int i = start; i <= 9; i++) {
-            if(sum-i<0) break;
-            if(list.size()>k) break;
-            list.add(i);
-            dfs(result, i + 1, sum - i, list, k);
-             list.remove(list.size() - 1);
+        Arrays.sort(candidates);
+        helper(candidates, result, new ArrayList<Integer>(), 0, target);
+        return result;        
+    }
+    
+    private void helper(int[] candidates, List<List<Integer>> result, ArrayList<Integer> list, int cur, int target) {
+        if (target == 0) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = cur; i < candidates.length && candidates[i] <= target; i++) {
+            list.add(candidates[i]);
+            helper(candidates, result, list, i, target - candidates[i]);
+            list.remove(list.size() - 1);
         }
     }
 }
