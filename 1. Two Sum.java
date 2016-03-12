@@ -41,7 +41,7 @@ public class Solution {
 		map.put(target - nums[i], i);
 	    }
 	}
-	return result;
+	return res;
     }
 }
 
