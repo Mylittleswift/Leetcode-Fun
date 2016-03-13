@@ -15,8 +15,7 @@ But the following is not:
    3    3
    */
    
-   
-   /**
+*/
 
  
  //Recursive solution
