@@ -17,15 +17,7 @@ But the following is not:
    
    
    /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
- 
+
  
  //Recursive solution
 public class Solution {
