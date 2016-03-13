@@ -13,7 +13,6 @@ But the following is not:
   2   2
    \   \
    3    3
-   */
    
 */
 
@@ -57,7 +56,6 @@ public class Solution {
         if (root == null) {
             return true;
         }
-         
         Queue<TreeNode> lQueue = new LinkedList<TreeNode>();
         Queue<TreeNode> rQueue = new LinkedList<TreeNode>();
          
@@ -90,7 +88,6 @@ public class Solution {
                 rQueue.offer(b.left);
             }
         }
-         
         return true;
     }
 }
