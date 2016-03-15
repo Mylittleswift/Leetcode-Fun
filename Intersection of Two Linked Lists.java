@@ -9,9 +9,8 @@
 
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) {
+        if (headA == null || headB == null)
             return null;
-        }
         
         ListNode curA = headA, curB = headB;
         while (curA != curB) {
@@ -19,7 +18,6 @@ public class Solution {
             curB = (curB == null? headA:curB.next);
         }
         return curA;
-        
     }
 }
 
