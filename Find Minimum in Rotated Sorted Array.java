@@ -10,16 +10,13 @@ You may assume no duplicate exists in the array.
 
 public class Solution {
     public int findMin(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 0)
             return 0;
-        }
          
         int lo = 0;
         int hi = nums.length - 1;
-         
         while (lo + 1 < hi) {
             int mid = lo + (hi - lo) / 2;
-             
             if (nums[lo] < nums[hi]) {
                 return nums[lo];
             } else if (nums[mid] < nums[hi]) {
@@ -28,7 +25,6 @@ public class Solution {
                 lo = mid;
             }
         }
-         
         return Math.min(nums[lo], nums[hi]);
     }
 }
