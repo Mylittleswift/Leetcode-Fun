@@ -10,30 +10,25 @@ Output: 7 -> 0 -> 8
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int carry =0;
+        ListNode helper  = new ListNode(0);
+        ListNode head = helper;
  
-        ListNode newHead = new ListNode(0);
-        ListNode p1 = l1, p2 = l2, p3=newHead;
- 
-        while(p1 != null || p2 != null){
-            if(p1 != null){
-                carry += p1.val;
-                p1 = p1.next;
+        while (l1 != null || l2 != null) {
+            if (l1 != null) {
+                carry += l1.val;
+                l1 = l1.next;
             }
- 
-            if(p2 != null){
-                carry += p2.val;
-                p2 = p2.next;
+            if (l2 != null) {
+                carry += l2.val;
+                l2 = l2.next;
             }
- 
-            p3.next = new ListNode(carry%10);
-            p3 = p3.next;
+            head.next = new ListNode(carry % 10);
+            head = head.next;
             carry /= 10;
         }
  
-        if(carry==1) 
-            p3.next=new ListNode(1);
- 
-        return newHead.next;
+        if (carry == 1) head.next=new ListNode(1);
+        return helper.next;
     }
 }
 
