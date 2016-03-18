@@ -35,7 +35,7 @@ public class Solution {
                 if (node.right != null)
                     queue.offer(node.right);
             }
-            result.add(new ArrayList<Integer>(curLevel));
+            result.add(curLevel);
         }
         return result;
     }
