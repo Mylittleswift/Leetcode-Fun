@@ -20,11 +20,11 @@ return its bottom-up level order traversal as:
 
 public class Solution {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> ressult = new ArrayList<List<Integer>>();
         LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
-        if (root == null) {
+        if (root == null) 
             return result;
-        }
+            
         queue.offer(root);
         while (!queue.isEmpty()) {
             ArrayList<Integer> curLevel = new ArrayList<Integer>();
@@ -33,15 +33,13 @@ public class Solution {
                 curLevel.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
-                }
                 if (node.right != null) {
                     queue.offer(node.right);
-                }
             }
-            result.add(new ArrayList<Integer>(curLevel));
+            result.add(curLevel);
         }
-        Collections.reverse(res);
-        return res;
+        Collections.reverse(result);
+        return result;
     }
 }
 
