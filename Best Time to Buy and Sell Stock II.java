@@ -8,9 +8,7 @@ However, you may not engage in multiple transactions at the same time (ie, you m
 
 public class Solution {
     public int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0) {
-            return 0;
-        }
+        if (prices == null || prices.length == 0) return 0;
         int maxprofit = 0;
         for (int i = 0; i < prices.length - 1; i++) {
             if (prices[i+1] - prices[i] > 0) {
