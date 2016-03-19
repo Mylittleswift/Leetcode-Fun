@@ -31,9 +31,9 @@ public class Solution {
             for (int i = 0; i < queue.size(); i++) {
                 TreeNode node = queue.poll();
                 curLevel.add(node.val);
-                if (node.left != null) {
+                if (node.left != null)
                     queue.offer(node.left);
-                if (node.right != null) {
+                if (node.right != null)
                     queue.offer(node.right);
             }
             result.add(curLevel);
