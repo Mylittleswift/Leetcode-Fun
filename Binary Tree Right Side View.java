@@ -12,7 +12,12 @@ Given the following binary tree,
 You should return [1, 3, 4].
 */
 
+//solution1 binary tree level order, peek last val in list
 
+
+
+
+//solution2
 public class Solution {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
