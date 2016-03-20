@@ -16,9 +16,9 @@ All root-to-leaf paths are:
 public class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        if (root == null) {
+        if (root == null)
             return result;
-        }
+            
         findPaths(root, result, root.val + "");
         return result;
     }
@@ -26,7 +26,6 @@ public class Solution {
     private void findPaths(TreeNode root, List<String> result, String cur) {
         if (root.left == null && root.right == null) {
             result.add(cur);
-            return;
         }
         if (root.left != null) {
             findPaths(root.left, result, cur + "->" + root.left.val);
@@ -36,4 +35,6 @@ public class Solution {
         }
     }
 }
+
+
 
