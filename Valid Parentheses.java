@@ -11,24 +11,20 @@ public class Solution {
             if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
                 stack.push(s.charAt(i));
             } else if (s.charAt(i) == ')') {
-                if (stack.isEmpty() || stack.peek() != '(') {
-                  return false;   
-                }
+                if (stack.isEmpty() || stack.peek() != '(')
+                  return false; 
                 stack.pop();
             } else if (s.charAt(i) == ']') {
-                if (stack.isEmpty() || stack.peek() != '[') {
-                  return false;   
-                }
+                if (stack.isEmpty() || stack.peek() != '[')
+                  return false;  
                 stack.pop();
             } else if (s.charAt(i) == '}') {
-                if (stack.isEmpty() || stack.peek() != '{') {
-                  return false;   
-                }
+                if (stack.isEmpty() || stack.peek() != '{')
+                  return false; 
                 stack.pop(); 
             } 
         }
         return stack.isEmpty();
-        
     }
 }
 
