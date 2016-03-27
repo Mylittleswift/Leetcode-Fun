@@ -15,24 +15,19 @@ Given "paper", "title", return true.
 
 public class Solution {
     public boolean isIsomorphic(String s, String t) {
-        if (s == null || t == null || s.length() != t.length()) {
+        if (s == null || t == null || s.length() != t.length())
             return false;
-        }
-        if (s.length() == 0 && t.length() == 0) {
+        if (s.length() == 0 && t.length() == 0)
             return true;
-        }
         
         HashMap<Character, Character> map = new HashMap<>();
-        
         for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i))) {
-                if (map.get(s.charAt(i)) != t.charAt(i)) {
+                if (map.get(s.charAt(i)) != t.charAt(i))
                     return false;
-                }
-        } else if (map.containsValue(t.charAt(i))) {
-            return false;
-        }
-        map.put(s.charAt(i), t.charAt(i));
+            } else if (map.containsValue(t.charAt(i)))
+                return false;
+            map.put(s.charAt(i), t.charAt(i));
         }
         return true;
     }
