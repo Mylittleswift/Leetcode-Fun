@@ -8,11 +8,18 @@
  * With this in mind the digital root of a positive integer n may be defined by using floor function, as num-9*((num-1)/9)
  */
 
-
+//solution1
 public class Solution {
     public int addDigits(int num) {
         return num - 9 * ((num -  1) / 9);
     }
 }
 
-
+//solution2
+public class Solution {
+    public int addDigits(int num) {
+        if (num <= 9) return num;
+        if (num % 9 == 0) return 9;
+           return num % 9;
+    }
+}
