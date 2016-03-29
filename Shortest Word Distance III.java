@@ -16,13 +16,11 @@ public class Solution {
          
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
-             
-            if (word.equals(word1)) {
+           if (word.equals(word1)) {
                 posA = i;
             } else if (word.equals(word2)) {
                 posB = i;
             }
-             
             if (posA != -1 && posB != -1 && posA != posB) {
                 minDistance = Math.min(minDistance, Math.abs(posA - posB));
             }
@@ -31,7 +29,6 @@ public class Solution {
                 posB = posA;
             }
         }
-         
         return minDistance;
     }
 }
