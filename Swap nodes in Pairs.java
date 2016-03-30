@@ -22,13 +22,10 @@ public class Solution {
             pre.next = cur.next;
             cur.next = cur.next.next;
             pre.next.next = cur;
-             
             pre = cur;
             cur = pre.next;
         }
-         
         return helper.next;
-        
     }
 }
 
