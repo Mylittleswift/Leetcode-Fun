@@ -32,7 +32,6 @@
 }
 
 
-
  /**
   *Solution2:
   *first sort the two String, and compare each index.
