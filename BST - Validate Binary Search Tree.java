@@ -12,12 +12,12 @@ public class Solution {
        return isBST(root, null, null);
     }
     
-    private boolean isBST(TreeNode node, Integer min, Integer max) {
+    private boolean isBST(TreeNode node, Integer less, Integer greater) {
         if (node == null) return true;
-        if ((min != null && node.val <= min) || (max != null && node.val >= max)) {
+        if ((min != null && node.val <= less) || (max != null && node.val >= greater)) {
             return false;
         }
-        return isBST(node.left, min, node.val) && isBST(node.right, node.val, max);
+        return isBST(node.left, less, node.val) && isBST(node.right, node.val, greater);
     }
 }
 
