@@ -13,21 +13,17 @@ public class Solution {
          
         int i = -1;
         int max = Integer.MIN_VALUE;
-         
         for (int num : preorder) {
             if (num < max) {
                 return false;
             }
-             
             while (i >= 0 && num > preorder[i]) {
                 max = preorder[i];
                 i--;
             }
-             
             i++;
             preorder[i] = num;
         }
-         
         return true;
     }
 }
