@@ -16,7 +16,7 @@ public class Solution {
 	    while (j < k) {
 		int sum = nums[i] + nums[j] + nums[k];
 		int diff = Math.abs(sum - target);
-                if(diff == 0) 
+                if (diff == 0) 
                     return sum;
                 if (diff < min) {
 		    min = diff;
