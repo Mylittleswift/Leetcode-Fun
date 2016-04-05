@@ -13,20 +13,15 @@ c) i|nternationalizatio|n  --> i18n
               1
      1---5----0
 d) l|ocalizatio|n          --> l10n
-Assume you have a dictionary and given a word, find whether its abbreviation is unique in the dictionary. A word's abbreviation is unique if no other word from the dictionary has the same abbreviation.
-
+Assume you have a dictionary and given a word, find whether its abbreviation is unique in the dictionary. 
+A word's abbreviation is unique if no other word from the dictionary has the same abbreviation.
 Example: 
-
 Given dictionary = [ "deer", "door", "cake", "card" ]
-
 isUnique("dear") -> false
 isUnique("cart") -> true
 isUnique("cane") -> false
 isUnique("make") -> true
 */
-
-
-
 
 public class ValidWordAbbr {  
     Map<String, Set<String> > map = new HashMap<>();  
@@ -55,6 +50,5 @@ public class ValidWordAbbr {
         }  
         if(!map.containsKey(s)) return true;  
         else return map.get(s).contains(word) && map.get(s).size()<=1;  
-          
     }  
 }  
