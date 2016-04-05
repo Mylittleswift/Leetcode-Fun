@@ -5,8 +5,6 @@
   *It doesn't matter what you leave beyond the new length.
   */
   
-  
-  
   public class Solution {
     public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length == 0) {
