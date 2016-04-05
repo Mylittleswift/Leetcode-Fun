@@ -1,6 +1,8 @@
 /*
-Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case letters. If no such two words exist, return 0.
-
+Given a string array words, find the maximum value of length(word[i]) * length(word[j]) 
+where the two words do not share common letters. 
+You may assume that each word will contain only lower case letters. 
+If no such two words exist, return 0.
 Example 1:
 Given ["abcw", "baz", "foo", "bar", "xtfn", "abcdef"]
 Return 16
@@ -34,8 +36,7 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if ((encodedWords[i] & encodedWords[j]) == 0) {
-                    maxLen = Math.max(maxLen, 
-                        words[i].length() * words[j].length());
+                    maxLen = Math.max(maxLen, words[i].length() * words[j].length());
                 }
             }
         }
