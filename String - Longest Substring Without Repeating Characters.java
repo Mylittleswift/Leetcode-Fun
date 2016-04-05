@@ -25,7 +25,8 @@ public class Solution {
 //solution2
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
-        if (s==null || s.length()==0) return 0;
+        if (s==null || s.length()==0) 
+            return 0;
         HashMap<Character,Integer> map = new HashMap<Character,Integer>();
         int i = 0; //start index of the potential longest substring
         int j = 0; //cur index 
