@@ -21,17 +21,12 @@ which would cause problems when the active area encroaches the border of the arr
 
 public class Solution {
     public void gameOfLife(int[][] board) {
-        if (board == null || board.length == 0) {
+        if (board == null || board.length == 0)
             return;
-        }
-         
         int m = board.length;
         int n = board[0].length;
-         
         // If live to dead, mark 2
         // If dead to live, mark 3
-         
-         
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 int liveNeighbors = getNumLiveNeighbors(i, j, board);
