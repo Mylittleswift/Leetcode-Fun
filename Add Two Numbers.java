@@ -27,7 +27,8 @@ public class Solution {
             carry /= 10;
         }
  
-        if (carry == 1) head.next=new ListNode(1);
+        if (carry == 1) 
+            head.next=new ListNode(1);
         return helper.next;
     }
 }
