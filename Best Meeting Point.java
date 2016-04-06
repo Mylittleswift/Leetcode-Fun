@@ -15,27 +15,25 @@ Try to solve it in one dimension first. How can this solution apply to the two d
 
 public class Solution {
     public int minTotalDistance(int[][] grid) {
-        if (grid == null || grid.length == 0) {
+        if (grid == null || grid.length == 0) 
             return 0;
-        }
-        
-        List<Integer> rowIndex = new ArrayList<>();
-        List<Integer> colIndex = new ArrayList<>();
-         
+        List<Integer> row = new ArrayList<>();
+        List<Integer> col = new ArrayList<>();
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == 1) {
-                    rowIndex.add(i);
-                    colIndex.add(j);
+                    row.add(i);
+                    col.add(j);
                 }
             }
         }
-        return getMP(rowIndex) + getMP(colIndex);  
+        return getMP(row) + getMP(col);  
     }  
       
     private int getMP(List<Integer> l) {  
         Collections.sort(l);  
-        int i = 0, j = l.size() - 1;  
+        int i = 0;
+        int j = l.size() - 1;  
         int result = 0;  
         while (i < j) {  
             result += l.get(j--) - l.get(i++);  
