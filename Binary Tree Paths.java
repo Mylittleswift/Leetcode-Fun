@@ -13,22 +13,20 @@ All root-to-leaf paths are:
 public class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        if (root == null) return result;
+        if (root == null) 
+            return result;
         findPaths(root, result, root.val + "");
         return result;
     }
     
     private void findPaths(TreeNode root, List<String> result, String cur) {
-        if (root.left == null && root.right == null) {
+        if (root.left == null && root.right == null)
             result.add(cur);
-        }
-        if (root.left != null) {
+        if (root.left != null)
             findPaths(root.left, result, cur + "->" + root.left.val);
-        }
-        if (root.right != null) {
+        if (root.right != null)
             findPaths(root.right, result, cur + "->" + root.right.val);
-        }
-    }
+   }
 }
 
 
