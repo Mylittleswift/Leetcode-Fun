@@ -28,14 +28,11 @@ public class Solution {
         for (int i = 0; i < secret.length(); i++) {
         	if (secret.charAt(i) == guess.charAt(i)) {
         		bulls++;
-        	}
-        	else {
+        	} else {
         		count[secret.charAt(i) - '0']++;
         		count[guess.charAt(i) - '0']--;
-        		if (count[secret.charAt(i) - '0'] <= 0) {
+        		if (count[secret.charAt(i) - '0'] <= 0)
         		    cows++;
-        		}
-        		
         		if (count[guess.charAt(i) - '0'] >= 0) {
         			cows++;
         		}
