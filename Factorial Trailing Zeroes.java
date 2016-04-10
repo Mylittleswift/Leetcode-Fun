@@ -14,19 +14,14 @@
 }
 
 
-
 //Iterative solution
 public class Solution {
     public int trailingZeroes(int n) {
-       if (n < 0) {
-		return -1;
+       int count = 0;
+       for (long i = 5; n / i >= 1; i *= 5) { //use long instead of int i
+	    count += n / i;
        }
- 
-	   int count = 0;
-	   for (long i = 5; n / i >= 1; i *= 5) { //use long instead of int i
-		   count += n / i;
-	   }
-	   return count;
+       return count;
     }
 }
 
