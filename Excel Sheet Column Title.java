@@ -13,11 +13,10 @@
   }
   
   
-  //Solution2
-  
-  public class Solution {
+ //Solution2
+ public class Solution {
     public String convertToTitle(int n) {
-    StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         while (n > 0) {
             int d = n % 26;
             n /= 26;
@@ -31,5 +30,4 @@
         return sb.reverse().toString();
     }
  }
- 
  
