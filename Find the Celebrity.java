@@ -18,10 +18,8 @@ public class Solution extends Relation {
         if (n <= 1) {
             return -1;
         }
-         
         int left = 0;
         int right = n - 1;
-         
         // Step 1: Find the potential candidate
         while (left < right) {
             if (knows(left, right)) {
@@ -30,7 +28,6 @@ public class Solution extends Relation {
                 right--;
             }
         }
-         
         // Step 2: Validate the candidate
         int candidate = right;
         for (int i = 0; i < n; i++) {
@@ -38,7 +35,6 @@ public class Solution extends Relation {
                 return -1;
             }
         }
-         
         return candidate;
     }
 }
