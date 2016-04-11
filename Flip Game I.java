@@ -22,7 +22,6 @@ public class Solution {
         if (s == null || s.length() < 2) {
             return result;
         }
-         
         for (int i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) == '+' && s.charAt(i + 1) == '+') {
                 result.add(s.substring(0, i) + "--" + s.substring(i + 2));
@@ -31,6 +30,4 @@ public class Solution {
         return result;
     }
 }
-
-
 
