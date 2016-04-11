@@ -16,13 +16,10 @@ public class Solution {
         res.add(curr + s.substring(start));                   
         if (start == s.length()) 
             return;
-                                                
         int i = 0;
-        
         if (start > 0) {
             i = start + 1;
         }
-        
         for (; i < s.length(); i++) {
             String prefix = curr + s.substring(start, i);               
             for (int j = 1; j <= s.length() - i; j++) {
