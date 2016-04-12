@@ -8,18 +8,18 @@ For example, in array [1, 2, 3, 1], 3 is a peak element and your function should
 
 public class Solution {
     public int findPeakElement(int[] nums) {
-        int l = 0, h = nums.length - 1;
-        while (l + 1 < h) {
-            int m = l + (h - l) / 2;
+        int l = 0, r = nums.length - 1;
+        while (l + 1 < r) {
+            int m = l + (r - l) / 2;
             if (nums[m] > nums[m - 1] && nums[m] > nums[m + 1]) {
                 return m;
             } else if (nums[m] > nums[m - 1]) {
                 l = m + 1;
             } else {
-                h = m - 1;
+                r = m - 1;
             }
         }
-        return nums[l] > nums[h] ? l : h;
+        return nums[l] > nums[r] ? l : r;
     }
 }
 
