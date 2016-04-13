@@ -15,17 +15,13 @@ public class Solution {
         while (curr != null) {
             prev = newHead;
             ListNode next = curr.next;
-             
             while (prev.next != null && prev.next.val < curr.val) {
                 prev = prev.next;
             }
-             
             curr.next = prev.next;
             prev.next = curr;
-             
             curr = next;
         }
-         
         return newHead.next;
     }
 }
