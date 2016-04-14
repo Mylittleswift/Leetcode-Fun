@@ -1,62 +1,51 @@
 /*
-Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, 
+Find the kth largest element in an unsorted array.
+Note that it is the kth largest element in the sorted order, 
 not the kth distinct element.
-
 For example,
 Given [3,2,1,5,6,4] and k = 2, return 5.
 */
 
-//O(nlog(n))
+//solution1 - O(nlog(n))
 public int findKthLargest(int[] nums, int k) {
     Arrays.sort(nums);
-    return nums[nums.length-k];
+    return nums[nums.length - k];
 }
 
 
-//Average case time is O(n), worst case time is O(n^2).
+//solution2 - Average case time is O(n), worst case time is O(n^2).
 public int findKthLargest(int[] nums, int k) {
 	if (k < 1 || nums == null) {
-		return 0;
+	    return 0;
 	}
- 
 	return getKth(nums.length - k +1, nums, 0, nums.length - 1);
 }
  
 public int getKth(int k, int[] nums, int start, int end) {
- 
 	int pivot = nums[end];
- 
 	int left = start;
 	int right = end;
- 
 	while (true) {
- 
-		while (nums[left] < pivot && left < right) {
-			left++;
-		}
- 
-		while (nums[right] >= pivot && right > left) {
-			right--;
-		}
- 
-		if (left == right) {
-			break;
-		}
- 
-		swap(nums, left, right);
+            while (nums[left] < pivot && left < right) {
+		left++;
+	    }
+            while (nums[right] >= pivot && right > left) {
+         	right--;
+	    }
+            if (left == right) {
+	        break;
+	    }
+            swap(nums, left, right);
 	}
- 
 	swap(nums, left, end);
- 
 	if (k == left + 1) {
-		return pivot;
+	    return pivot;
 	} else if (k < left + 1) {
-		return getKth(k, nums, start, left - 1);
+	    return getKth(k, nums, start, left - 1);
 	} else {
-		return getKth(k, nums, left + 1, end);
+            return getKth(k, nums, left + 1, end);
 	}
 }
- 
 public void swap(int[] nums, int n1, int n2) {
 	int tmp = nums[n1];
 	nums[n1] = nums[n2];
