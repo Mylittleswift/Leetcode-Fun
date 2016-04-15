@@ -1,5 +1,6 @@
  /**
-  *Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+  *Given an array of size n, find the majority element. 
+  * The majority element is the element that appears more than ⌊ n/2 ⌋ times.
   *You may assume that the array is non-empty and the majority element always exist in the array.
   */
   
@@ -7,14 +8,12 @@
   //Sorting array takes nlog(n). So the time complexity of this solution is nlog(n). 
   
   public int majorityElement(int[] nums) {
-	   if (nums.length == 1) {
-	    	return nums[0];
+      if (nums.length == 1) {
+	  return nums[0];
     	}
- 
-   	Arrays.sort(nums);
-	  return nums[nums.length / 2];
-	  }
-	 }
+      Arrays.sort(nums);
+      return nums[nums.length / 2];
+ }
  
  
  //Solution2: Linear Time Majority Vote Algorithm, time complexity is n.
