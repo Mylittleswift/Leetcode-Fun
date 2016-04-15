@@ -17,7 +17,6 @@
  
  
  //Solution2: Linear Time Majority Vote Algorithm, time complexity is n.
- 
  public class Solution {
     public int majorityElement(int[] nums) {
         int result = 0;
@@ -30,7 +29,7 @@
             } else if (result == nums[i]) {
                 count++;
             } else {
-            count--;
+                count--;
             }
         }
         return result;
