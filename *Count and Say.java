@@ -12,20 +12,20 @@ public class Solution {
     public String countAndSay(int n) {
         String say = "1";
         for (int i = 2; i <= n; i++) {
-            StringBuilder cur = new StringBuilder();
-            for (int j = 0; j < say.length(); j++) {
-                char c = say.charAt(j);
-                j++;
-                int count = 1;
-                while (j < say.length() && say.charAt(j) == c) {
-                    j++;
-                    count++;
+            StringBuilder sb = new StringBuilder();
+            int count = 1;
+            for (int j = 1; j < say.length(); j++) {
+                if (say.charAt(j) == say.charAt(j-1)) {
+                count++;
+                } else {
+                    sb.append(count);
+                    sb.append(say.charAt(j-1);
+                    count = 1;
                 }
-                j--;
-                cur.append(count);
-                cur.append(c);
             }
-            say = cur.toString();
+            sb.append(count);
+            sb.append(say.charAt(say.length() - 1);
+            say = sb.toString();
         }
         return say;
     }
