@@ -1,10 +1,7 @@
 /*
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
-
 If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
-
 The replacement must be in-place, do not allocate extra memory.
-
 Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
 1,2,3 → 1,3,2
 3,2,1 → 1,2,3
@@ -13,8 +10,9 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 
 public class Solution {
     public void nextPermutation(int[] nums) {
-        if(nums == null || nums.length<2)
+        if(nums == null || nums.length<2) {
             return;
+        }
  
         int p=0;            
         for(int i=nums.length-2; i>=0; i--){
@@ -41,7 +39,7 @@ public class Solution {
         nums[p]=nums[q];
         nums[q]=temp;
  
-        if(p<nums.length-1){
+        if (p<nums.length-1) {
             reverse(nums, p+1, nums.length-1);
         }
     }
