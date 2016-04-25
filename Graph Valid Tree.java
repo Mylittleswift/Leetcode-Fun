@@ -15,31 +15,25 @@ Since all edges are undirected, [0, 1] is the same as [1, 0] and thus will not a
 //DFS
 public class Solution {
     public boolean validTree(int n, int[][] edges) {
-         
         // Create an adj list 
         List<List<Integer>> adjList = new ArrayList<List<Integer>>();
         for (int i = 0; i < n; i++) {
             adjList.add(new ArrayList<Integer>());
         }
-         
         for (int[] edge : edges) {
             adjList.get(edge[1]).add(edge[0]);
             adjList.get(edge[0]).add(edge[1]);
         }
-         
         boolean[] visited = new boolean[n];
-         
         if (!validTreeHelper(n, edges, 0, -1, visited, adjList)) {
             return false;
         }
-         
         // Check the islands
         for (boolean v : visited) {
             if (!v) {
                 return false;
             }
         }
-         
         return true;
     }
      
@@ -48,16 +42,13 @@ public class Solution {
         if (visited[vertexId]) {
             return false;
         }
-         
         visited[vertexId] = true;
-         
         List<Integer> neighbors = adjList.get(vertexId);
         for (Integer neighbor : neighbors) {
             if (neighbor != parentId && !validTreeHelper(n, edges, neighbor, vertexId, visited, adjList)) {
                 return false;
             }
         }
-         
         return true;
     }
 }
