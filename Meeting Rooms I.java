@@ -4,10 +4,9 @@ determine if a person could attend all meetings.
 For example, Given [[0, 30],[5, 10],[15, 20]], return false.
 */
 
-
 public class Solution {
     public boolean canAttendMeetings(Interval[] intervals) {
-        if(intervals == null || intervals.length == 0) return true;
+        if (intervals == null || intervals.length == 0) return true;
         Arrays.sort(intervals, new Comparator<Interval>(){
             public int compare(Interval i1, Interval i2){
                 return i1.start - i2.start;
