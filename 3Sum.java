@@ -11,10 +11,10 @@ The solution set must not contain duplicate triplets.
 */
 //naive solution
 public class Solution {
-    public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
+    public List<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> each = new ArrayList<Integer>();
+        ArrayList<List<Integer>> result = new ArrayList<>();
+        ArrayList<Integer> each = new ArrayList<>();
         
         for (int i = 0; i < num.length; i++) {
             for(int j = i+1; j < num.length; j++) {
