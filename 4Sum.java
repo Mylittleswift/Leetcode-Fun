@@ -14,8 +14,8 @@ A solution set is:
 public class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
     	Arrays.sort(nums);
-	HashSet<List<Integer>> set = new HashSet<List<Integer>>();
-	ArrayList<List<Integer>> result = new ArrayList<List<Integer>>();
+	HashSet<List<Integer>> set = new HashSet<>();
+	ArrayList<List<Integer>> result = new ArrayList<>();
  
 	for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
