@@ -29,7 +29,6 @@ public class Solution {
             preDigit = curDigit;
         }
         return dp[s.length()];
-        
     }
 }
 
