@@ -22,4 +22,3 @@ public class Solution {
         return nums[l] > nums[r] ? l : r;
     }
 }
-
