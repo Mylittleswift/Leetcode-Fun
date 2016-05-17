@@ -15,11 +15,16 @@ public class Solution {
         int n = citations.length;
         int[] count = new int[n+1];
         for (int i = 0; i < n; i++) {
-            if (citations[i] > n) count[n]++;
-            else count[citations[i]]++;
+            if (citations[i] > n) {
+                count[n]++;
+            } else {
+                count[citations[i]]++;
         }
+        
         for (int i = n; i > 0; i--) {
-            if (count[i] >= i) return i;
+            if (count[i] >= i) {
+                return i;
+            }
             count[i-1] += count[i];
         }
         return 0;
