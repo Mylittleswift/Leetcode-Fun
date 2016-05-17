@@ -12,7 +12,6 @@ public class Solution {
         if (nums == null || nums.length <= 1) {
             return true;
         }
-        
         int max = nums[0];
         for (int i = 0; i < nums.length; i++) {
             if (max <= i && nums[i] == 0) {
@@ -28,4 +27,3 @@ public class Solution {
         return false;
     }
 }
-
